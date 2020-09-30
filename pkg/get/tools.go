@@ -5,7 +5,7 @@ func MakeTools() []Tool {
 
 	tools = append(tools,
 		Tool{
-			Owner: "openfaas",
+			Owner: "zack-hable",
 			Repo:  "faas-cli",
 			Name:  "faas-cli",
 			BinaryTemplate: `{{ if HasPrefix .OS "ming" -}}
@@ -22,6 +22,27 @@ func MakeTools() []Tool {
 {{.Name}}
 {{- end -}}`,
 		})
+
+		// Original FAAS-CLI
+//	tools = append(tools,
+//		Tool{
+//			Owner: "openfaas",
+//			Repo:  "faas-cli",
+//			Name:  "faas-cli",
+//			BinaryTemplate: `{{ if HasPrefix .OS "ming" -}}
+//{{.Name}}.exe
+//{{- else if eq .OS "darwin" -}}
+//{{.Name}}-darwin
+//{{- else if eq .Arch "armv6l" -}}
+//{{.Name}}-armhf
+//{{- else if eq .Arch "armv7l" -}}
+//{{.Name}}-armhf
+//{{- else if eq .Arch "aarch64" -}}
+//{{.Name}}-arm64
+//{{- else -}}
+//{{.Name}}
+//{{- end -}}`,
+//		})
 
 	tools = append(tools,
 		Tool{
